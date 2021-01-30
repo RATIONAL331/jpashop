@@ -26,4 +26,11 @@ public class ItemService {
     public List<Item> findAll(){
         return itemRepository.findAll();
     }
+
+    public void updateItem(Long itemId, int price, String name, int stockQuantity) {
+        Item one = itemRepository.findOne(itemId);
+        one.setPrice(price);
+        one.setName(name);
+        one.setStockQuantity(stockQuantity);
+    }
 }
